@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "styled-bootstrap-grid";
 import { LinkedInButton } from "../LinkedInButton/LinkedInButton";
-import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
+// import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
 import { H2, H3, Paragraph } from "./../../foundation/Typography";
 import { StyledFooter} from "./Footer.styled";
  
@@ -11,7 +11,7 @@ export function Footer(){
       <Container>
         <Row>
           <Col col={12} sm={12} md={12} mdOffset={0}>
-            <ScrollUpButton/>
+            {/* <ScrollUpButton/> */}
             <H2 isVariant>Connect With  Me</H2>
             <H3>me@arturoibanez.com</H3>
             <br></br>
