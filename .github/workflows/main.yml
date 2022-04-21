@@ -40,4 +40,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: 'placeholder'
       - name: Deploy with rsync
-        run: rsync -avzh --delete -e 'ssh -o StrictHostKeyChecking=no' public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/public_html/
+        run: rsync -avzh --delete -e 'ssh -o StrictHostKeyChecking=no' public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_DIRECTORY }}
