@@ -17,6 +17,20 @@ export const query = graphql`
         field_client
         field_tag_line
         field_project_date
+        field_cover {
+          alt
+        }
+        relationships {
+          field_cover {
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -38,12 +52,13 @@ export function ProjectList({...props}){
                 <List isPage={props.isPage}  isHomePage={props.isHomePage}>
                   {data.allNodeProject.nodes.map((node) => (
                     <ListItem
+                      cover={node.relationships.field_cover.localFile.childImageSharp.fluid}
                       path={node.path.alias}
                       label={node.field_client}
                       tagline={node.field_tag_line}
                       date={node.field_project_date}
                       about={node.field_is_about}
-                      altTxt={node.field_client}
+                      altTxt={node.field_cover.alt}
                     />
                   ))}
                 </List>

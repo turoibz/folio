@@ -37,6 +37,7 @@ function layout({theme, isPage, isHomePage}){
     }
     .projectImg{
       display: ${displayImg};
+      margin-bottom: -2em;
     }
 	`;
 };
@@ -76,7 +77,8 @@ export const StyledListItem = styled.li`
   a{
     border-radius: 4px;
     position: relative;
-    padding: 2rem;
+    overflow: hidden;
+    // padding: 2rem;
     display: block;
     height: 100%;
     box-shadow: 0px 0px 3px 1px ${({ theme }) => theme.color.name[theme.color.shadow]};
@@ -84,11 +86,11 @@ export const StyledListItem = styled.li`
     color: inherit;
     text-decoration: none;
     transition: transform 250ms ease;
-    img{
-      width: calc(100% + 4rem);
-      margin: -2rem -2rem 0 -2rem;
-      border-radius: 4px 4px 0 0;
-    }
+    // img{
+    //   width: calc(100% + 4rem);
+    //   margin: -2rem -2rem 0 -2rem;
+    //   border-radius: 4px 4px 0 0;
+    // }
     svg{
       position: absolute;
       bottom: 1rem;
@@ -109,6 +111,10 @@ export const StyledListItem = styled.li`
       pointer-events: none;
     }
   }
+`;
+
+export const StyledListItemContent = styled.div`
+  padding: 2em;
 `;
 
 export const ListItemLabel = styled.span``;

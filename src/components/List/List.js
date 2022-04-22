@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import ScrollContainer from 'react-indiana-drag-scroll'
+import Image from "gatsby-image";
+import ScrollContainer from 'react-indiana-drag-scroll';
 import { Link as NavLink } from "gatsby";
-import { H4, Paragraph } from "./../../foundation/Typography"
+import { H4, Paragraph } from "./../../foundation/Typography";
 import { ThemeContext } from "styled-components";
 import { ChevronRightIcon } from "../../foundation/Icon";
-import { StyledList, StyledListItem } from "./List.styled";
+import { StyledList, StyledListItem, StyledListItemContent } from "./List.styled";
 
 export function List({children, ...props}){
   return(
@@ -21,19 +22,21 @@ export function ListItem({...props}){
   return(
     <StyledListItem>
       <NavLink activeClassName="active" to={props.path}>
-        {/* <img className={"projectImg"} src={props.img} alt={props.altTxt}/> */}
-        <Paragraph>
-          {props.label}
-        </Paragraph>
-        <Paragraph xxs>
-          {props.date}
-        </Paragraph>
-        <H4>
-          {props.tagline}
-        </H4>
-        <Paragraph xxs>
-          {props.about}
-        </Paragraph>
+        <Image fluid={props.cover} alt={props.altTxt} className={"projectImg"}/>
+        <StyledListItemContent>
+          <Paragraph>
+            {props.label}
+          </Paragraph>
+          <H4>
+            {props.tagline}
+          </H4>
+          <Paragraph xxs>
+            {props.date}
+          </Paragraph>
+          <Paragraph xxs>
+            {props.about}
+          </Paragraph>
+        </StyledListItemContent>
         <ChevronRightIcon size="md" color={theme.color.list}/>
       </NavLink>
     </StyledListItem>
