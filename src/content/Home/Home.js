@@ -19,7 +19,7 @@ export function Home(){
               <H2>Interaction Designer</H2>
               <H1 isHeadline>Arturo Ibanez</H1>
               <br/>
-              <CurrentStatus isWorking label={"Designing Products @ Zendesk"}/>
+              <CurrentStatus/>
             </StyledHome>
           </Col>
           <Col col={12} sm={12} md={6} mdOffset={0}>

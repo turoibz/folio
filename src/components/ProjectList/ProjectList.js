@@ -8,7 +8,7 @@ import { H2 } from "./../../foundation/Typography";
 
 export const query = graphql`
   query projectListResult {
-    allNodeProject(sort: {fields: created, order: ASC}) {
+    allNodeProject(sort: {fields: field_order, order: ASC}) {
       nodes {
         field_is_about
         path {
@@ -16,6 +16,7 @@ export const query = graphql`
         }
         field_client
         field_tag_line
+        field_project_date
       }
     }
   }
@@ -40,6 +41,7 @@ export function ProjectList({...props}){
                       path={node.path.alias}
                       label={node.field_client}
                       tagline={node.field_tag_line}
+                      date={node.field_project_date}
                       about={node.field_is_about}
                       altTxt={node.field_client}
                     />

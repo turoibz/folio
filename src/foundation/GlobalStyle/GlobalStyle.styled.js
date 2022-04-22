@@ -5,7 +5,7 @@ const StyledGlobalStyle = createGlobalStyle`
 	${borderBox}
 	${normilizeStyle}
 	body{
-		transition: background 0.3s ease;
+		transition: background 0.2s ease;
 		background: ${({ theme }) => theme.color.name[theme.color.bodyBg]};
 		font-family: ${({ theme }) => theme.font.family.sourcesans};
 		font-weight: ${({ theme }) => theme.font.weight.regular};
@@ -78,9 +78,9 @@ const StyledGlobalStyle = createGlobalStyle`
 	}
 	p.isCaption{
 		font-size: ${({ theme }) => theme.font.size.xxs};
-		border-top: "1px solid";
+		border-top: 1px solid;
 		border-color: ${({ theme }) => theme.color.bodyTxt};
-		padding-top: "1.5rem";
+		padding-top: 1.5rem;
 	}
 	p.xxs{
 		font-size: ${({ theme }) => theme.font.size.xxs};

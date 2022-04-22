@@ -25,6 +25,9 @@ export function ListItem({...props}){
         <Paragraph>
           {props.label}
         </Paragraph>
+        <Paragraph xxs>
+          {props.date}
+        </Paragraph>
         <H4>
           {props.tagline}
         </H4>

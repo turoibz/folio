@@ -10,6 +10,7 @@ export const query = graphql`
       }
       title
       field_is_about
+      field_project_date
     }
   }
 `;
@@ -18,6 +19,7 @@ const ProjectTemplate = ({data}) => {
   const project = {
     title: data.nodeProject.title,
     projectType: data.nodeProject.field_is_about,
+    projectDate: data.nodeProject.field_project_date,
     body: data.nodeProject.body.processed
   }
 
