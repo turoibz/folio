@@ -8,19 +8,18 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 
 const App = ({ children }) => {
+
   const theme = useThemeConfig();
   
   return (
     <Theme theme={theme}>
       <GlobalStyle/>
-      <>
-        {/* <Tracker/> */}
-        <Header/>
-        <StyledContentWrapper>
-          {children}
-        </StyledContentWrapper>
-        <Footer/>
-      </>
+      {/* <Tracker/> */}
+      <Header/>
+      <StyledContentWrapper>
+        {children}
+      </StyledContentWrapper>
+      <Footer/>
     </Theme>
   )
 }
