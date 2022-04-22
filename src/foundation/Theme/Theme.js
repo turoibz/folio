@@ -10,7 +10,7 @@ const themes = {
 	light: Light
 }
 
-export function Theme({children, theme}) {
+const Theme = ({children, theme}) => {
 	const currentTheme = themes[theme];
 
 	return (
@@ -28,3 +28,5 @@ export function Theme({children, theme}) {
 		</ThemeProvider>
 	)
 }
+
+export default Theme

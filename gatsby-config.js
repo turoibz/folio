@@ -5,9 +5,9 @@ module.exports = {
   },
   plugins: ["gatsby-plugin-styled-components",
   // {
-  //   resolve: 'gatsby-plugin-google-analytics',
+  //   resolve: "gatsby-plugin-google-analytics",
   //   options: {
-  //     "trackingId": ""
+  //     trackingId: "UA-87366845-1"
   //   }
   // },
   {

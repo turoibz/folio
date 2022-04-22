@@ -1,6 +1,6 @@
 import React from "react";
 import StyledGlobalStyle from "./GlobalStyle.styled";
 
-export function GlobalStyle(){
+export default function GlobalStyle(){
 	return <StyledGlobalStyle/>;
 }
