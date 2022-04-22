@@ -14,7 +14,7 @@ export function useThemeUpdateConfig(){
 
 export function useLocalStorageState(key, initialValue) {
   const [value, setValue] = useState(() => {
-    const persistedValue = localStorage.getItem(key);
+    const persistedValue = typeof window !== 'undefined' ? localStorage.getItem(key) : null;
     return persistedValue !== null ? persistedValue : initialValue;
   });
 
