@@ -4,12 +4,12 @@ import { Container, Row, Col } from "styled-bootstrap-grid";
 import { Spacer } from "../../components/Spacer/Spacer";
 import { H1, H2 } from "./../../foundation/Typography";
 import { StyledHome } from "./Home.styled";
-import { Glasses } from "../../components/Glasses/Glasses";
+import { GlassesLight, GlassesDark } from "../../components/Glasses/Glasses";
 import { ProjectList } from "../../components/ProjectList/ProjectList";
 import { CurrentStatus } from "../../components/CurrentStatus/CurrentStatus";
 
 export function Home(){
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
   return(
     <>
       <Container>
@@ -26,7 +26,10 @@ export function Home(){
             <StyledHome>
               <br/>
               <br/>
-              <Glasses color={theme.color.meFill}/>
+              {theme.id === "dark" ?
+                <GlassesDark color={theme.color.meFill}/> :
+                <GlassesLight color={theme.color.meFill}/>
+              }
             </StyledHome>
           </Col>
         </Row>

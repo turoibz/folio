@@ -11,6 +11,7 @@ export const query = graphql`
     allNodeProject(sort: {fields: field_order, order: ASC}) {
       nodes {
         field_is_about
+        id
         path {
           alias
         }
@@ -52,6 +53,7 @@ export function ProjectList({...props}){
                 <List isPage={props.isPage}  isHomePage={props.isHomePage}>
                   {data.allNodeProject.nodes.map((node) => (
                     <ListItem
+                      key={node.id}
                       cover={node.relationships.field_cover.localFile.childImageSharp.fluid}
                       path={node.path.alias}
                       label={node.field_client}
