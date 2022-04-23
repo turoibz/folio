@@ -9,18 +9,7 @@ export const StyledContentWrapper = styled.section`
 	justify-content: center;
 `;
 
-export const StyledAppBackground = styled.div`
-	position: fixed;
-	height: 100vh;
+export const StyledApp = styled.main`
+	height: 100%;
 	width: 100vw;
-	margin: 0;
-	padding: 0;
-	background: transparent;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	svg{
-		top: 0;
-		right: -150%;
-	}
 `;

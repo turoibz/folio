@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import App from "../app/App";
 import Project from "./../components/Project/Project";
 
 export const query = graphql`
@@ -39,7 +40,9 @@ const ProjectTemplate = ({data}) => {
   }
 
   return(
-    <Project {...project}/>
+    <App>
+      <Project {...project}/>
+    </App>
   )
 }
 

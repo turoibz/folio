@@ -1,9 +1,12 @@
 import * as React from "react";
+import App from "../app/App";
 import { Home } from "../content/Home/Home";
 
 const IndexPage = () => {
   return (
-    <Home/>
+    <App>
+      <Home/>
+    </App>
   )
 }
 

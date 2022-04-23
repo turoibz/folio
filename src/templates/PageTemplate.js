@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import App from "../app/App";
 import Page from "./../components/Page/Page";
 
 export const query = graphql`
@@ -19,7 +20,9 @@ const PageTemplate = ({data}) => {
   }
 
   return(
-    <Page {...page}/>
+    <App>
+      <Page {...page}/>
+    </App>
   )
 }
 

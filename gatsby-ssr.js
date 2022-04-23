@@ -1,9 +1,11 @@
 import React from "react";
 import { ThemeConfig } from "./src/app/App.config";
-import App from "./src/app/App";
+import AppTheme from "./src/app/App.theme";
 
 export const wrapPageElement = ({ element, props }) => {
-  return <App {...props}>{element}</App>
+  return (
+    <AppTheme {...props}>{element}</AppTheme>
+  )
 }
 
 export const wrapRootElement = ({ element }) => {
