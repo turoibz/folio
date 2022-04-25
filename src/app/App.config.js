@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 // import ReactGA from "react-ga";
 
 // Check if window is defined (so if in the browser or in node.js).
-const isBrowser = typeof window !== "undefined"
+// const isBrowser = typeof window !== "undefined"
 
 const ThemeConfigContext = React.createContext();
 const ThemeUpdateConfigContext = React.createContext();
@@ -30,13 +30,17 @@ export function useThemeUpdateConfig(){
 // }
 
 export function ThemeConfig({ children }) {
-  
-  let colorMode = false;
-  if (isBrowser) {
-    colorMode = window.__colormode === 'dark';
-  }
+  const [darkMode, setDarkMode] = useState(undefined);
+  useEffect(() => {
+    const initialDarkMode = window.__colormode === 'dark';
+    setDarkMode(initialDarkMode);
+  },[])
+  // let colorMode = false;
+  // if (isBrowser) {
+  //   colorMode = window.__colormode === 'dark';
+  // }
   // const colorMode = window.__colormode === 'dark';
-  const [darkMode, setDarkMode] = useState(colorMode);
+  // const [darkMode, setDarkMode] = useState(colorMode);
   // const [darkMode, setDarkMode] = useState(false);
 
   // const [theme, setPersistentDarkTheme] = useLocalStorageState("theme", "light");
