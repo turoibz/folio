@@ -16,7 +16,7 @@ export function LinkedInButton(){
   }
   return(
     <StyledLinkedInButton onClick={handleClick}>
-      <a href="https://www.linkedin.com/in/arturo-ibanez-ixd/" target="_blank" tabIndex="-1">
+      <a href="https://www.linkedin.com/in/arturo-ibanez-ixd/" target="_blank" tabIndex="-1"  rel="noreferrer">
         <LinkedinIcon size="md" color={theme.color.navigation}/>
       </a>
     </StyledLinkedInButton>

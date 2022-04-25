@@ -37,7 +37,7 @@ export function ThemeConfig({ children }) {
   }
 
   return(
-    <ThemeConfigContext.Provider value={theme}>
+    <ThemeConfigContext.Provider value={"dark"}>
       <ThemeUpdateConfigContext.Provider value={toggleTheme}>
         {children}
       </ThemeUpdateConfigContext.Provider>

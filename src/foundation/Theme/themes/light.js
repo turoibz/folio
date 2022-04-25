@@ -1,6 +1,6 @@
 import { rem } from "polished";
 
-export default {
+const Light =  {
 	id:"light",
 	color: {
 		bodyBg: "isabelline",
@@ -80,3 +80,5 @@ export default {
 		suffix: "_light"
 	}
 }
+
+export default Light;
