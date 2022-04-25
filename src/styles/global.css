@@ -1,4 +1,8 @@
-body {
+html.dark {
   background-color: #252323;
-  transition: background 1s ease;
+  transition: background 0.2s ease;
+}
+html.light{
+  background-color: #F5F1ED;
+  transition: background 0.2s ease;
 }

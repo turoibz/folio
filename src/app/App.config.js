@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 
 const ThemeConfigContext = React.createContext();
 const ThemeUpdateConfigContext = React.createContext();
+const isBrowser = () => typeof window !== "undefined";
 
 export function useThemeConfig(){
   return useContext(ThemeConfigContext);
@@ -12,24 +13,31 @@ export function useThemeUpdateConfig(){
   return useContext(ThemeUpdateConfigContext);
 }
 
-export function useLocalStorageState(key, initialValue) {
-  const [value, setValue] = useState(() => {
-    const persistedValue = typeof window !== 'undefined' ? localStorage.getItem(key) : null;
-    return persistedValue !== null ? persistedValue : initialValue;
-  });
+// export function useLocalStorageState(key, initialValue) {
+//   const [value, setValue] = useState(() => {
+//     const persistedValue = isBrowser ? localStorage.getItem(key) : null;
+//     return persistedValue !== null ? persistedValue : initialValue;
+//   });
 
-  useEffect(() => {
-    localStorage.setItem(key, value);
-  }, [key, value]);
+//   useEffect(() => {
+//     localStorage.setItem(key, value);
+//   }, [key, value]);
 
-  return [value, setValue];
-}
+//   return [value, setValue];
+// }
 
 export function ThemeConfig({ children }) {
-  const [theme, setPersistentDarkTheme] = useLocalStorageState("theme", "light");
+  
+  const colorMode = isBrowser && window.__colormode === 'dark';
+  const [darkMode, setDarkMode] = useState(colorMode);
+  // const [darkMode, setDarkMode] = useState(false);
+
+  // const [theme, setPersistentDarkTheme] = useLocalStorageState("theme", "light");
 
   function toggleTheme(){
-    setPersistentDarkTheme(prevSetting => prevSetting==="light" ? "dark" : "light");
+    setDarkMode(prevSetting => !prevSetting);
+    isBrowser && localStorage.setItem("theme", darkMode ? "light" : "dark");
+    // setPersistentDarkTheme(prevSetting => prevSetting==="light" ? "dark" : "light");
     // ReactGA.event({
     //   category: "Switch theme",
     //   action: "User switched theme",
@@ -37,7 +45,7 @@ export function ThemeConfig({ children }) {
   }
 
   return(
-    <ThemeConfigContext.Provider value={"dark"}>
+    <ThemeConfigContext.Provider value={darkMode ? "dark" : "light"}>
       <ThemeUpdateConfigContext.Provider value={toggleTheme}>
         {children}
       </ThemeUpdateConfigContext.Provider>
