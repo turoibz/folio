@@ -1,9 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 // import ReactGA from "react-ga";
 
+// Check if window is defined (so if in the browser or in node.js).
+const isBrowser = typeof window !== "undefined"
+
 const ThemeConfigContext = React.createContext();
 const ThemeUpdateConfigContext = React.createContext();
-const isBrowser = () => typeof window !== "undefined";
+
 
 export function useThemeConfig(){
   return useContext(ThemeConfigContext);
@@ -28,7 +31,11 @@ export function useThemeUpdateConfig(){
 
 export function ThemeConfig({ children }) {
   
-  const colorMode = isBrowser && window.__colormode === 'dark';
+  let colorMode = false;
+  if (isBrowser) {
+    colorMode = window.__colormode === 'dark';
+  }
+  // const colorMode = window.__colormode === 'dark';
   const [darkMode, setDarkMode] = useState(colorMode);
   // const [darkMode, setDarkMode] = useState(false);
 
@@ -36,7 +43,7 @@ export function ThemeConfig({ children }) {
 
   function toggleTheme(){
     setDarkMode(prevSetting => !prevSetting);
-    isBrowser && localStorage.setItem("theme", darkMode ? "light" : "dark");
+    localStorage.setItem("theme", darkMode ? "light" : "dark");
     // setPersistentDarkTheme(prevSetting => prevSetting==="light" ? "dark" : "light");
     // ReactGA.event({
     //   category: "Switch theme",
