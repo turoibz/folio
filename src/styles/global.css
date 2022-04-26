@@ -6,3 +6,7 @@ html.light{
   background-color: #F5F1ED;
   transition: background 0.2s ease;
 }
+
+[data-rmiz-wrap="visible"], [data-rmiz-wrap="hidden"]{
+  width: 100%;
+}

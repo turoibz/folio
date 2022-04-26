@@ -101,6 +101,10 @@ const StyledGlobalStyle = createGlobalStyle`
 	p.xxs{
 		font-size: ${({ theme }) => theme.font.size.xxs};
 	}
+	[data-rmiz-overlay]{
+		background-color:${({ theme }) => theme.color.name[theme.color.bodyBg]}f5 !important;
+		background-opacity:.8 !important;
+	}
 	.iiz {
 		max-width: 100%;
 		margin: 0;
