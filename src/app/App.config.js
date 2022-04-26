@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-// import ReactGA from "react-ga";
+import ReactGA from "react-ga";
 
 const ThemeConfigContext = React.createContext();
 const ThemeUpdateConfigContext = React.createContext();
@@ -13,19 +13,6 @@ export function useThemeUpdateConfig(){
   return useContext(ThemeUpdateConfigContext);
 }
 
-// export function useLocalStorageState(key, initialValue) {
-//   const [value, setValue] = useState(() => {
-//     const persistedValue = isBrowser ? localStorage.getItem(key) : null;
-//     return persistedValue !== null ? persistedValue : initialValue;
-//   });
-
-//   useEffect(() => {
-//     localStorage.setItem(key, value);
-//   }, [key, value]);
-
-//   return [value, setValue];
-// }
-
 export function ThemeConfig({ children }) {
   const [darkMode, setDarkMode] = useState(undefined);
   useEffect(() => {
@@ -33,16 +20,13 @@ export function ThemeConfig({ children }) {
     setDarkMode(initialDarkMode);
   },[])
 
-  // const [theme, setPersistentDarkTheme] = useLocalStorageState("theme", "light");
-
   function toggleTheme(){
     setDarkMode(prevSetting => !prevSetting);
     localStorage.setItem("theme", darkMode ? "light" : "dark");
-    // setPersistentDarkTheme(prevSetting => prevSetting==="light" ? "dark" : "light");
-    // ReactGA.event({
-    //   category: "Switch theme",
-    //   action: "User switched theme",
-    // });
+    ReactGA.event({
+      category: "Switch theme",
+      action: "User switched theme",
+    });
   }
 
   return(

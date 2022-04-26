@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Tracker } from "../components/Tracker/Tracker";
 import Head from "./../components/Head/Head";
 import Project from "./../components/Project/Project";
 
@@ -31,7 +32,7 @@ export const query = graphql`
   }
 `;
 
-const ProjectTemplate = ({data}) => {
+const ProjectTemplate = ({location, data}) => {
   const project = {
     title: data.nodeProject.title,
     heading: data.nodeProject.field_heading,
@@ -43,8 +44,9 @@ const ProjectTemplate = ({data}) => {
 
   return(
     <>
-     <Head title={project.title}/>
-     <Project {...project}/>
+      <Tracker location={location}/>
+      <Head title={project.title}/>
+      <Project {...project}/>
     </>
   )
 }

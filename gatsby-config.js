@@ -11,12 +11,6 @@ module.exports = {
       disableVendorPrefixes: true
     },
   },
-  // {
-  //   resolve: "gatsby-plugin-google-analytics",
-  //   options: {
-  //     trackingId: "UA-87366845-1"
-  //   }
-  // },
   {
     resolve: "gatsby-source-drupal",
     options: {

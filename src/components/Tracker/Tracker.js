@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import ReactGA from "react-ga";
-import { useLocation } from "react-router-dom";
 
 
-export function Tracker(){
-  let location = useLocation();
+
+export function Tracker({location}){
+  const currentLocation = location.pathname;
   
   useEffect(() => {
-    window.scrollTo({top: 0, behavior: 'auto'});
-    ReactGA.pageview(location.pathname);
-  }, [location]);
+    ReactGA.pageview(currentLocation);
+  }, [currentLocation]);
 
   return (
     <></>
