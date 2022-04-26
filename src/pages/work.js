@@ -1,9 +1,13 @@
 import * as React from "react";
+import Head from "./../components/Head/Head";
 import { Work } from "../content/Work/Work";
 
 const WorkPage = () => {
   return (
-    <Work/>
+    <>
+      <Head title="Work"/>
+      <Work/>
+    </>
   )
 }
 
