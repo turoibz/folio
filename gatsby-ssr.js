@@ -24,17 +24,22 @@ const InitializeTheme = () => {
 
         const mql = window.matchMedia('(prefers-color-scheme: dark)');
         const hasMediaQueryPreference = typeof mql.matches === 'boolean';
+        
+        mql.addEventListener("change", (e) => {
+          const systemColorMode = e.matches ? 'dark' : 'light';
+          setColorMode(systemColorMode);
+        });
 
         if (hasMediaQueryPreference) {
           return mql.matches ? 'dark' : 'light';
         }
-
+        
         return 'light';
       }
       const colorMode = getInitialColorMode();
       setColorMode(colorMode);
     })()
-  `;
+  `.replace(/\n/g, ' ').replace(/ {2}/g, '');
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: colorModeConfig }} />;
 };

@@ -17,6 +17,11 @@ export function ThemeConfig({ children }) {
   const [darkMode, setDarkMode] = useState(undefined);
   useEffect(() => {
     const initialDarkMode = window.__colormode === 'dark';
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');    
+    mql.addEventListener("change", (e) => {
+      const systemColorMode = e.matches;
+      setDarkMode(systemColorMode);
+    });
     setDarkMode(initialDarkMode);
   },[])
 

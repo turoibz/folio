@@ -1,3 +1,11 @@
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === `build-javascript`) {
+    actions.setWebpackConfig({
+      devtool: false,
+    })
+  }
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const resultProjects = await graphql(`
     query Projects {
