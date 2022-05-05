@@ -10,7 +10,7 @@ export function Work(){
       <Container>
         <Row>
           <Col col={12} md={12} sm={12}>
-            <H1>Work</H1>
+            <H1>My Work</H1>
             <H2>These are some of the projects I've worked on</H2>
           </Col>
         </Row>

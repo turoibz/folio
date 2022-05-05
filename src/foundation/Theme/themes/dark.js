@@ -3,9 +3,9 @@ import { rem } from "polished";
 const Dark = {
 	id:"dark",
 	color: {
-		bodyBg: "raisingBlack",
+		bodyBg: "dark",
 		bodyTxt: "isabelline",
-		projectsBg: "dark",
+		projectsBg: "raisingBlack",
 		footerBg: "eerieBlack",
 		navigation: "isabelline",
 		scrollUpBtn: "slateGray",

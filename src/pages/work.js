@@ -7,7 +7,7 @@ const WorkPage = ({location}) => {
   return (
     <>
       <Tracker location={location}/>
-      <Head title="Work"/>
+      <Head title="My Work"/>
       <Work/>
     </>
   )

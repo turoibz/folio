@@ -48,7 +48,7 @@ export function ProjectList({...props}){
             <Row>
               <Col col={12} sm={12} md={12}>
                 {!props.isPage &&
-                  <H2 isVariant>Work</H2>
+                  <H2 isVariant>My Work</H2>
                 }
                 <List isPage={props.isPage}  isHomePage={props.isHomePage}>
                   {data.allNodeProject.nodes.map((node) => (

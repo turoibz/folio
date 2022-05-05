@@ -3,9 +3,9 @@ import { rem } from "polished";
 const Light =  {
 	id:"light",
 	color: {
-		bodyBg: "isabelline",
+		bodyBg: "sand",
 		bodyTxt: "raisingBlack",
-		projectsBg: "sand",
+		projectsBg: "isabelline",
 		footerBg: "bone",
 		navigation: "raisingBlack",
 		scrollUpBtn: "grullo",

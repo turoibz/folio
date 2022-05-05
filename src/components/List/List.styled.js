@@ -9,7 +9,7 @@ function layout({theme, isPage, isHomePage}){
 	const childMargin = isPage ? "0" : "1rem";
 	const fixMargin = isPage ? "-3rem" : null;
 	const displayImg = isHomePage ? "none" : "block";
-  const backgroundColor = isPage ? theme.color.name[theme.color.projectsBg] : theme.color.name[theme.color.bodyBg];
+  const backgroundColor = theme.color.name[theme.color.projectsBg];
   const displayClearFix = isPage ? "none" : "block";
 	return css`
 		display: ${display};
