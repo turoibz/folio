@@ -15,6 +15,7 @@ module.exports = {
     resolve: "gatsby-source-drupal",
     options: {
       baseUrl: "http://portfolio.arturoibanez.com/",
+      concurrentFileRequests: 2,
     },
   },
   "gatsby-plugin-image",
